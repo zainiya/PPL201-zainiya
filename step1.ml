@@ -118,7 +118,7 @@ val if_else_inst = Inst_cond(condition1,outer_if_instr_list,sum_initialize);
 
 (* whole program block *)
 (* combine declarations, initialization and if-else *)
-val main_program = Inst_Compd_list([num_initialize, sum_initialize, i_initialize, if_else_inst]);
+val minSumOfFactors = Inst_Compd_list([num_initialize, sum_initialize, i_initialize, if_else_inst]);
 
 
 
