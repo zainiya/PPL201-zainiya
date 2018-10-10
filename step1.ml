@@ -116,13 +116,11 @@ val outer_if_instr_list = Inst_Compd_list([while_outer,sum_exp2]);
 
 val if_else_inst = Inst_cond(condition1,outer_if_instr_list,sum_initialize);
 
+(* whole program block *)
+(* combine declarations, initialization and if-else *)
+val main_program = Inst_Compd_list([num_initialize, sum_initialize, i_initialize, if_else_inst]);
 
-(* Function definition for sum of all the nodes in binary tree *)
-fun minSumOfFactors  =  if_else_inst;
 
-val result = minSumOfFactors;
-
-result;
 
 
 
