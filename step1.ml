@@ -31,7 +31,7 @@ datatype Type = Boolean_type|Integer_type;
 
 type Declaration = variable * Type;
 type Declaration_list = Declaration list;
-type Program= Declaration_list * Instruction;
+type Program = Declaration_list * Instruction;
 
 (*num Integer; *)
 val num = string_id("num");
@@ -116,10 +116,11 @@ val outer_if_instr_list = Inst_Compd_list([while_outer,sum_exp2]);
 
 val if_else_inst = Inst_cond(condition1,outer_if_instr_list,sum_initialize);
 
-(* whole program block *)
+val dec_list = [num_declaration, sum_declaration, i_declaration]:Declaration_list;
 (* combine all initialization and if-else *)
-val minSumOfFactors = Inst_Compd_list([num_initialize, sum_initialize, i_initialize, if_else_inst]);
-
+val initialization_if_else = Inst_Compd_list([num_initialize, sum_initialize, i_initialize, if_else_inst]);
+(* whole program block *)
+val minSumOfFactors = (dec_list, initialization_if_else):Program;
 
 
 
